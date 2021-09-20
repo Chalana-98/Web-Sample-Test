@@ -1,0 +1,82 @@
+/*Body*/
+body{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, rgb(130, 131, 219), rgb(223, 96, 149));
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*Loading Section*/
+.loading{
+  
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    border-radius: 20%;
+    border-top: 10px solid #33ff9c;
+    position: relative;
+    animation: anim1 2s linear infinite;
+
+}
+
+/*Using Pseudo element*/
+.loading::before, .loading::after{
+    content: '';
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: -10px;
+    box-sizing: border-box;
+    border-radius: 20%;
+
+}
+.loading::before{
+    border-top: 10px solid #2d09f9;
+    transform: rotate(120deg);
+}
+.loading::after{
+    border-top: 10px solid  #f9094a ;
+    transform: rotate(240deg);
+
+}
+
+/*Text*/
+.loading span{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    font-size: 15px;
+    color: beige;
+    text-align: center;
+    line-height: 84px;
+    animation: anim2 2s linear infinite;
+
+}
+
+/*animation*/
+@keyframes anim1{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes anim2{
+    to{
+        transform: rotate(-360deg);
+    }
+
+    0%{
+        color: #2d09f9;
+    }
+    50%{
+        color: #33ff9c;
+    }
+    100%{
+        color: #f9094a;
+    }
+}
